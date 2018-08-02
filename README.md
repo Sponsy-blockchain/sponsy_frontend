@@ -6,13 +6,22 @@ Sponsy is disrupting the industry of sponsorships by introducing the platform co
 
 # Functionality
 * Sign up as a <i>sponsor</i> or <i>sponsee</i>
-* 
-    * Prim's minimum spanning tree
-    * Random spanning tree
-    * Bridson's algorithm for Poisson's disc sampling
-    * More coming!
-* Adjust speed of the demonstration by clicking at the bottom left corner
-* Get comprehensive description of the way each algorithm works by pressing info button
+* List your business
+    * Specify the title and the brief quote describing your business
+    * Upload the logo of your business
+    * Create a thorough description of your company
+    * Tell about the advantages of running sponsorships with you
+    * Choose the industries that you are most comfortable and productive in working with
+* List your sponsorship assets (<i>for sponsees only</i>)
+    * Specify the title of your sponsorship asset, upload the photo
+    * Enter the minimum cost at which you will be willing to sell the asset
+* Discover sponsorship statistics pertaining to sponsors and sponsees of your interest
+    * See the financials of each business
+    * Instantly analyze Industries and Geo distributions of partners of each business
+* Discover new sponsors and sponsees
+    * Reach out to any business of your choice
+    * Send partnership proposals to businesses you like and see whether they like you back
+    * Communicate with partner and create an exceptional sponsorship experience
 
 # Screenshots
 ![AlgoPlayScreenshot](Images/github_screens.jpg)
