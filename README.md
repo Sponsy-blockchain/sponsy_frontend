@@ -2,7 +2,7 @@
 # Overview
 Sponsy is disrupting the industry of sponsorships by introducing the platform connecting sponsors, sponsees and experts from all over the world. Every business that is willing to be sponsored will be free to sign up, submit the details of his business, list her sponsorship assets and negotiate deals with hundreds of sponsors.
 
-<a href="mvp.sponsy.org">Check out our MVP</a>
+<a href="https://mvp.sponsy.org">Check out our MVP</a>
 
 # Functionality
 * Sign up as a <i>sponsor</i> or <i>sponsee</i>
@@ -18,23 +18,18 @@ Sponsy is disrupting the industry of sponsorships by introducing the platform co
 * Discover sponsorship statistics pertaining to sponsors and sponsees of your interest
     * See the financials of each business
     * Instantly analyze Industries and Geo distributions of partners of each business
+    * Explore the Return on Investment of sponsees
 * Discover new sponsors and sponsees
     * Reach out to any business of your choice
     * Send partnership proposals to businesses you like and see whether they like you back
     * Communicate with partner and create an exceptional sponsorship experience
 
-# Screenshots
-![AlgoPlayScreenshot](Images/github_screens.jpg)
-
-# Employed technologies
-* Swift, Core Graphics, Core Animation, UIKit
-* Minimum spanning tree
-* MinHeap Data Structure
-* QuadTree
-* Poisson's Disc Distribution
-* Bridson's Algorithm for incremental Poisson's generation
+# Visual
+![sponsy_screen_1](images/screen_1.png)
+![sponsy_screen_2](images/screen_2.jpg)
+![sponsy_screen_3](images/screen_3.jpg)
 
 # To-do
-- [ ] Mitchell's best candidate algorithm
-- [ ] Lloyd's algorithm
-- [ ] Array shuffling
+- [ ] Experts registration and collaboration
+- [ ] Inner freelancers platform
+- [ ] IoT integration
