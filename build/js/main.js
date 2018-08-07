@@ -8,6 +8,8 @@ webpackJsonp([0],{
 
 __webpack_require__(126);
 
+__webpack_require__(332);
+
 /***/ }),
 
 /***/ 126:
@@ -34,6 +36,20 @@ window.$ = _jquery2.default;
 window.jQuery = _jquery2.default;
 
 __webpack_require__(331);
+
+/***/ }),
+
+/***/ 332:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+$('.notify-selector').on('click', function (event) {
+    // let $this = $(event.currentTarget);
+
+    $('.notify').toggleClass('checked');
+});
 
 /***/ })
 
