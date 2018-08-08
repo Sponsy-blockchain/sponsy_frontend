@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width">
-		<link rel="stylesheet" href="css/main.css?v=1533650968976">
+		<link rel="stylesheet" href="css/main.css?v=1533740540823">
 	</head>
 	<body>
 		<header class="header">
@@ -36,29 +36,35 @@
 			</nav>
 		</aside>
 		<main class="dashboard">
-			<div class="dashboard__container"> 
-				<div class="dashboard__row dashboard-platform-section">
-					<h2 class="dashboard-platform-section__header">Platform statistics</h2>
-					<div class="dashboard__item dashboard-platform">
-						<div class="dashboard-platform__content">
-							<p class="dashboard-platform__value">40</p>
-							<p class="dashboard-platform__text">Number of sponsors on the platform </p>
-						</div>
-						<div class="dashboard-platform__image"><img src="images/sponsor_platform.png" alt="Sponsors"></div>
-					</div>
-					<div class="dashboard__item dashboard-platform">
-						<div class="dashboard-platform__content">
-							<p class="dashboard-platform__value">33</p>
-							<p class="dashboard-platform__text">Number of sponsees on the platform</p>
-						</div>
-						<div class="dashboard-platform__image"><img src="images/handshake_platform.png" alt="Sponsee"></div>
-					</div>
-					<div class="dashboard__item dashboard-platform">
-						<div class="dashboard-platform__content">
-							<p class="dashboard-platform__value">100</p>
-							<p class="dashboard-platform__text">Number of assets on the platform</p>
-						</div>
-						<div class="dashboard-platform__image"><img src="images/network_platform.png" alt="Assets"></div>
+			<div class="dashboard__container">
+				<div class="dashboard__row center">
+					<h2 class="dashboard__section-header">List new sponsorship asset</h2>
+					<div class="dashboard__item list-new-asset">
+						<form>
+							<div class="list-new-asset__container">
+								<div class="list-new-asset__item list-new-asset__item_1">
+									<p>
+										<label for="input-scene">What is your sponsorship asset?</label>
+									</p>
+									<p>
+										<input id="input-scene" type="text" placeholder="Scene curtains branding">
+									</p>
+									<p>
+										<label for="input-spons">Enter the minimum price for which you’d like to offer this asset</label>
+									</p>
+									<p>
+										<input id="input-spons" type="text" placeholder="SPONS 15,000">
+									</p>
+								</div>
+								<div class="list-new-asset__item list-new-asset__item_2">
+									<div class="list-new-asset__image-placeholder">Upload asset’s photo</div><img class="list-new-asset__image" src="images/photo-empty.png" alt="Assets photo">
+								</div>
+							</div>
+							<div class="list-new-asset__direct">
+								<div class="list-new-asset__button list-new-asset__button_cancel">Cancel</div>
+								<input class="list-new-asset__button list-new-asset__button_cancel" type="submit" value="Confirm">
+							</div>
+						</form>
 					</div>
 				</div>
 			</div>
@@ -82,7 +88,7 @@
 				</div>
 			</div>
 		</div>
-		<script src="js/vendor.js?v=1533650968976"></script>
-		<script src="js/main.js?v=1533650968976"></script>
+		<script src="js/vendor.js?v=1533740540823"></script>
+		<script src="js/main.js?v=1533740540823"></script>
 	</body>
 </html>
