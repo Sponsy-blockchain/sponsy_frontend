@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width">
-		<link rel="stylesheet" href="css/main.css?v=1533913445136">
+		<link rel="stylesheet" href="css/main.css?v=1533913448416">
 	</head>
 	<body>
 		<header class="header">
@@ -36,13 +36,10 @@
 			</nav>
 		</aside>
 		<main class="dashboard">
-			<div class="dashboard__container">
-				<div class="dashboard__header">
-					<h1 class="dashboard__title">My business</h1><a class="dashboard__edit" href="/">edit</a>
-				</div>
-				<div class="dashboard__row dashboard__row_first">
+			<div class="dashboard__container dashboard__container_footer-padding"> 
+				<div class="dashboard__row dashboard__row_no-header">
 					<div class="dashboard__item dashboard-brand">
-						<div class="dashboard-brand__image">	<img src="images/sponsee/logo.png" alt="Brand"/></div>
+						<div class="dashboard-brand__image">	<img src="images/sponsee/logo.png" alt="Nice Jazz Festival"/></div>
 						<div class="dashboard-brand__content">
 							<h2 class="dashboard-brand__header">Nice Jazz Festival</h2>
 							<div class="dashboard-brand__text">
@@ -54,14 +51,7 @@
 						<p class="dashboard-rating__header">Rating</p>
 						<p class="dashboard-rating__text">4.3</p>
 					</div>
-					<div class="dashboard__item dashboard-arrangements">
-						<p class="dashboard-arrangements__header">0</p>
-						<p class="dashboard-arrangements__text">Total number of my arrangements</p>
-					</div>
-					<div class="dashboard__item dashboard-foundation">
-						<p class="dashboard-foundation__header">2</p>
-						<p class="dashboard-foundation__text">Number of sponsorship assets</p>
-					</div>
+					<div class="dashboard__item dashboard-propose"><span>Propose partnership</span></div>
 				</div>
 				<div class="dashboard__row">
 					<div class="dashboard__column">
@@ -144,49 +134,74 @@
 						</div>
 					</div>
 				</div>
-				<div class="dashboard__row justify">
+				<div class="dashboard__row">
 					<h2 class="dashboard__section-header">My Sponsorship Assets</h2>
-					<div class="dashboard__item dashboard-assets">
-						<div class="dashboard-assets__title">No assets have been listed yet</div><img class="dashboard-assets__image" src="images/blank.png" alt="Blank"/>
-						<div class="dashboard-assets__text">You won’t appear in Sponsees tab before you list at least 1 asset</div>
-						<div class="dashboard-assets__button">List new asset</div>
+					<div class="dashboard__item sponsorship-assets">
+						<div class="sponsorship-assets__image"><img src="images/sponsee/image1.png" alt="Scene"/></div>
+						<h3 class="sponsorship-assets__title">Scene curtains branding</h3>
+						<p class="sponsorship-assets__text-1">from</p>
+						<p><span class="sponsorship-assets__text-2">spons</span><span class="sponsorship-assets__value">1920</span></p>
+						<div class="sponsorship-assets__rating">
+							<div class="sponsorship-assets__star full"></div>
+							<div class="sponsorship-assets__star full"></div>
+							<div class="sponsorship-assets__star full"></div>
+							<div class="sponsorship-assets__star full"></div>
+							<div class="sponsorship-assets__star half"></div>
+						</div>
+						<div class="sponsorship-assets__metrics">
+							<div class="sponsorship-assets__metric">
+								<div class="sponsorship-assets__metric-value">4.5</div>
+								<div class="sponsorship-assets__metric-text">Rating</div>
+							</div>
+							<div class="sponsorship-assets__metric">
+								<div class="sponsorship-assets__metric-value">170%</div>
+								<div class="sponsorship-assets__metric-text">Average ROI 1 YEAR</div>
+							</div>
+							<div class="sponsorship-assets__metric">
+								<div class="sponsorship-assets__metric-value">$900k</div>
+								<div class="sponsorship-assets__metric-text">Total spent</div>
+							</div>
+						</div>
+					</div>
+					<div class="dashboard__item sponsorship-assets">
+						<div class="sponsorship-assets__image"><img src="images/sponsee/image2.png" alt="Scene"/></div>
+						<h3 class="sponsorship-assets__title">Private showroom 100 sq ft</h3>
+						<p class="sponsorship-assets__text-1">from</p>
+						<p><span class="sponsorship-assets__text-2">spons</span><span class="sponsorship-assets__value">15k</span></p>
+						<div class="sponsorship-assets__rating">
+							<div class="sponsorship-assets__star full"></div>
+							<div class="sponsorship-assets__star full"></div>
+							<div class="sponsorship-assets__star full"></div>
+							<div class="sponsorship-assets__star full"></div>
+							<div class="sponsorship-assets__star empty"></div>
+						</div>
+						<div class="sponsorship-assets__metrics">
+							<div class="sponsorship-assets__metric">
+								<div class="sponsorship-assets__metric-value">4.0</div>
+								<div class="sponsorship-assets__metric-text">Rating</div>
+							</div>
+							<div class="sponsorship-assets__metric">
+								<div class="sponsorship-assets__metric-value">120%</div>
+								<div class="sponsorship-assets__metric-text">Average ROI 1 YEAR</div>
+							</div>
+							<div class="sponsorship-assets__metric">
+								<div class="sponsorship-assets__metric-value">$320k</div>
+								<div class="sponsorship-assets__metric-text">Total spent</div>
+							</div>
+						</div>
 					</div>
 				</div>
-				<div class="dashboard__row">
+				<div class="dashbord__row">
 					<h2 class="dashboard__section-header">Return On Investment</h2>
 					<div class="dashboard__item return-on">
 						<h3 class="return-on__title">Average 6 months ROI delivered</h3>
-						<div class="return-on__content"><img class="return-on__image" src="images/sponsee/graph.png" alt="Graph">
+						<div class="return-on__content"><img class="return-on__image" src="images/sponsee/graph.png" alt="Average 6 months ROI delivered"/>
 							<div class="return-on__info">
 								<p class="return-on__description">Average ROI</p>
 								<p class="return-on__time">6 month</p>
 								<p class="return-on__value">46%</p>
 							</div>
 						</div>
-					</div>
-				</div>
-				<div class="dashboard__row dashboard-platform-section">
-					<h2 class="dashboard__section-header">Platform statistics</h2>
-					<div class="dashboard__item dashboard-platform">
-						<div class="dashboard-platform__content">
-							<p class="dashboard-platform__value">40</p>
-							<p class="dashboard-platform__text">Number of sponsors on the platform</p>
-						</div>
-						<div class="dashboard-platform__image"><img src="images/sponsor_platform.png"/></div>
-					</div>
-					<div class="dashboard__item dashboard-platform">
-						<div class="dashboard-platform__content">
-							<p class="dashboard-platform__value">33</p>
-							<p class="dashboard-platform__text">Number of sponsees on the platform</p>
-						</div>
-						<div class="dashboard-platform__image"><img src="images/handshake_platform.png"/></div>
-					</div>
-					<div class="dashboard__item dashboard-platform">
-						<div class="dashboard-platform__content">
-							<p class="dashboard-platform__value">100</p>
-							<p class="dashboard-platform__text">Number of assets on the platform</p>
-						</div>
-						<div class="dashboard-platform__image"><img src="images/network_platform.png"/></div>
 					</div>
 				</div>
 			</div>
@@ -210,7 +225,7 @@
 				</div>
 			</div>
 		</div>
-		<script src="js/vendor.js?v=1533913445139"></script>
-		<script src="js/main.js?v=1533913445139"></script>
+		<script src="js/vendor.js?v=1533913448418"></script>
+		<script src="js/main.js?v=1533913448418"></script>
 	</body>
 </html>
