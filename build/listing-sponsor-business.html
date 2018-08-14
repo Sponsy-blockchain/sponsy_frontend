@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width">
-		<link rel="stylesheet" href="css/main.css?v=1534166511741">
+		<link rel="stylesheet" href="css/main.css?v=1534242860204">
 	</head>
 	<body>
 		<header class="header">
@@ -34,7 +34,10 @@
 						</div>
 						<div class="dashboard__item sponsor-buisness">
 							<div class="sponsor-buisness__logo">
-								<p class="sponsors-buisness__hint label-unify">Chose a sponsor’s logo</p><img class="sponsor-buisness__image" src="images/photo-empty.png" alt="Logo"/>
+								<p class="sponsors-buisness__hint label-unify">Chose a sponsor’s logo</p>
+								<label class="label-file-unify"><img class="sponsor-buisness__image" src="images/photo-empty.png" alt="Logo"/>
+									<input class="input-file-unify" type="file"/>
+								</label>
 							</div>
 							<div class="sponsor-buisness__content">
 								<h3 class="sponsor-buisness__title">Adidas</h3>
@@ -60,12 +63,19 @@
 						</div>
 						<div class="dashboard__item sponsor-select">
 							<p class="label-unify">Select your business indusrty from the list below</p>
+							<div class="sponsor-select__container">
+								<select class="sponsor-select__select" id="details-select" name="details-select">
+									<option selected>Click to collapse</option>
+									<option value="Automative">Automative</option>
+									<option value="Technology &amp; Telecommunications">Technology & Telecommunications</option>
+									<option value="Clothing">Clothing</option>
+								</select>
+							</div>
 						</div>
 					</div>
 					<div class="dashboard__row">
-						<div class="list-new-asset__direct">
-							<div class="list-new-asset__button list-new-asset__button_cancel">Cancel</div>
-							<input class="list-new-asset__button list-new-asset__button_confirm" type="submit" value="Confirm"/>
+						<div class="list-new-asset__direct"><a class="list-new-asset__button list-new-asset__button_cancel animation-unify" href="/">Cancel</a>
+							<input class="list-new-asset__button list-new-asset__button_confirm animation-unify" type="submit" value="Confirm"/>
 						</div>
 					</div>
 				</form>
@@ -77,20 +87,20 @@
 				<p class="notify__description">Partnership request from</p>
 				<p class="notify__title">Nice Jazz Festival</p>
 				<div class="notify__direct">
-					<div class="notify__button notify__button_decline">Decline</div>
-					<div class="notify__button notify__button_approve">Approve</div>
+					<div class="notify__button notify__button_decline animation-unify">Decline</div>
+					<div class="notify__button notify__button_approve animation-unify">Approve</div>
 				</div>
 			</div>
 			<div class="notify__item">
 				<p class="notify__description">Partnership request from</p>
 				<p class="notify__title">Nice Jazz Festival</p>
 				<div class="notify__direct">
-					<div class="notify__button notify__button_decline">Decline</div>
-					<div class="notify__button notify__button_approve">Approve</div>
+					<div class="notify__button notify__button_decline animation-unify">Decline</div>
+					<div class="notify__button notify__button_approve animation-unify">Approve</div>
 				</div>
 			</div>
 		</div>
-		<script src="js/vendor.js?v=1534166511742"></script>
-		<script src="js/main.js?v=1534166511742"></script>
+		<script src="js/vendor.js?v=1534242860205"></script>
+		<script src="js/main.js?v=1534242860205"></script>
 	</body>
 </html>
