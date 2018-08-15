@@ -1197,7 +1197,9 @@ $(document).on('click', function (event) {
 "use strict";
 
 
-$('#details-select').select2();
+$('#details-select').select2({
+    placeholder: "Click to collapse"
+});
 
 /***/ })
 
