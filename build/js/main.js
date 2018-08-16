@@ -10,9 +10,13 @@ __webpack_require__(163);
 
 __webpack_require__(368);
 
-__webpack_require__(400);
+__webpack_require__(369);
 
 __webpack_require__(401);
+
+__webpack_require__(402);
+
+__webpack_require__(403);
 
 /***/ }),
 
@@ -47,9 +51,38 @@ __webpack_require__(367);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
+// var flagEvent = false;
+// if (screen.width < 1280) {
+//     $('#viewport').attr('content','width=device-width, initial-scale=1');
+//     flagEvent = true;
+//     console.log(screen.width);
+// }
+// $(window).resize(function() {
+//     if (screen.width >= 1280) {
+//         if (flagEvent == true) {
+//             $('#viewport').attr('content','width=1920');
+//             flagEvent = false;
+//             console.log(screen.width);
+//         }
+//     } else {
+//         if (flagEvent == false) {
+//             $('#viewport').attr('content','width=device-width');
+//             flagEvent = true;
+//             console.log(screen.width);
+//         }
+//     }
+// });
+
+
+/***/ }),
+
+/***/ 369:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
 var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;
 
-var _typeof2 = __webpack_require__(369);
+var _typeof2 = __webpack_require__(370);
 
 var _typeof3 = _interopRequireDefault(_typeof2);
 
@@ -1170,7 +1203,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 /***/ }),
 
-/***/ 400:
+/***/ 401:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1191,7 +1224,7 @@ $(document).on('click', function (event) {
 
 /***/ }),
 
-/***/ 401:
+/***/ 402:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1200,6 +1233,25 @@ $(document).on('click', function (event) {
 $('#details-select').select2({
     placeholder: "Click to collapse"
 });
+
+/***/ }),
+
+/***/ 403:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+if ($('.chart').length > 0) {
+    // var canvas=$('#financial-chart');
+    var ctx = $('#financial-chart-1').get(0).getContext("2d");
+    // var ctx = canvas.getContext('2d');
+    ctx.lineWidth = 1; // толщина линии
+    ctx.moveTo(0, 160); //передвигаем перо
+    ctx.lineTo(200, 100); //рисуем линию
+    ctx.strokeStyle = '#1d95d1';
+    ctx.stroke();
+}
 
 /***/ })
 

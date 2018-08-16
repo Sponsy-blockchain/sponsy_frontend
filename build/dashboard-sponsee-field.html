@@ -3,8 +3,8 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width">
-		<link rel="stylesheet" href="css/main.css?v=1534341228822">
+		<meta name="viewport" content="width=device-width" id="viewport">
+		<link rel="stylesheet" href="css/main.css?v=1534426765919">
 	</head>
 	<body>
 		<header class="header">
@@ -67,7 +67,35 @@
 					<div class="dashboard__column">
 						<div class="dashboard__item dashboard-financials">
 							<h2 class="dashboard-financials__header">Financials</h2>
-							<div class="dashboard-financials__chart"><img src="images/sponsee/graph1.png"/></div>
+							<div class="dashboard-financials__chart">
+								<div class="chart">
+									<div class="chart__axis chart__axis_y">
+										<div class="chart__value">6000</div>
+										<div class="chart__value">4000</div>
+										<div class="chart__value">2000</div>
+									</div>
+									<div class="chart__field">
+										<div class="chart__line"></div>
+										<div class="chart__line"></div>
+										<div class="chart__line"></div>
+										<canvas class="chart__canvas" id="financial-chart-1"></canvas>
+									</div>
+									<div class="chart__axis chart__axis_x">
+										<div class="chart__value">Jan</div>
+										<div class="chart__value">Feb</div>
+										<div class="chart__value">Mar</div>
+										<div class="chart__value">Apr</div>
+										<div class="chart__value">May</div>
+										<div class="chart__value">Jun</div>
+										<div class="chart__value">Jul</div>
+										<div class="chart__value">Aug</div>
+										<div class="chart__value">Sep</div>
+										<div class="chart__value">Oct</div>
+										<div class="chart__value">Nov</div>
+										<div class="chart__value">Dec</div>
+									</div>
+								</div>
+							</div>
 							<div class="dashboard-financials__values">
 								<div class="dashboard-financials__item">
 									<div class="dashboard-financials__spend">Total spend</div>
@@ -208,7 +236,33 @@
 					<h2 class="dashboard__section-header">Return On Investment</h2>
 					<div class="dashboard__item return-on">
 						<h3 class="return-on__title">Average 6 months ROI delivered</h3>
-						<div class="return-on__content"><img class="return-on__image" src="images/sponsee/graph.png" alt="Average 6 months ROI delivered"/>
+						<div class="return-on__content">
+							<div class="return-on__chart chart">
+								<div class="chart__axis chart__axis_y">
+									<div class="chart__value">6000</div>
+									<div class="chart__value">4000</div>
+									<div class="chart__value">2000</div>
+								</div>
+								<div class="chart__field">
+									<div class="chart__line"></div>
+									<div class="chart__line"></div>
+									<div class="chart__line"></div>
+								</div>
+								<div class="chart__axis chart__axis_x">
+									<div class="chart__value">Jan</div>
+									<div class="chart__value">Feb</div>
+									<div class="chart__value">Mar</div>
+									<div class="chart__value">Apr</div>
+									<div class="chart__value">May</div>
+									<div class="chart__value">Jun</div>
+									<div class="chart__value">Jul</div>
+									<div class="chart__value">Aug</div>
+									<div class="chart__value">Sep</div>
+									<div class="chart__value">Oct</div>
+									<div class="chart__value">Nov</div>
+									<div class="chart__value">Dec</div>
+								</div>
+							</div>
 							<div class="return-on__info">
 								<p class="return-on__description">Average ROI</p>
 								<p class="return-on__time">6 month</p>
@@ -267,7 +321,7 @@
 				</div>
 			</div>
 		</div>
-		<script src="js/vendor.js?v=1534341228825"></script>
-		<script src="js/main.js?v=1534341228825"></script>
+		<script src="js/vendor.js?v=1534426765922"></script>
+		<script src="js/main.js?v=1534426765922"></script>
 	</body>
 </html>
