@@ -1243,14 +1243,56 @@ $('#details-select').select2({
 
 
 if ($('.chart').length > 0) {
-    // var canvas=$('#financial-chart');
-    var ctx = $('#financial-chart-1').get(0).getContext("2d");
-    // var ctx = canvas.getContext('2d');
-    ctx.lineWidth = 1; // толщина линии
-    ctx.moveTo(0, 160); //передвигаем перо
-    ctx.lineTo(200, 100); //рисуем линию
-    ctx.strokeStyle = '#1d95d1';
-    ctx.stroke();
+    var chartValue = function chartValue(value, //Значение за месяц 
+    canvasAxisYSize, // Ширина по оси Y
+    axisYStartValue, // Начальное значение по оси Y
+    axisYEndValue // Конечное значение по оси Y
+    ) {
+        return canvasAxisYSize - (value - axisYStartValue) * canvasAxisYSize / (axisYEndValue - axisYStartValue);
+    };
+
+    var object = $('#financial-chart-1');
+    // Входные данные
+    var values = [{ month: 'Jan', value: 3000 }, { month: 'Feb', value: 3400 }, { month: 'Mar', value: 4500 }, { month: 'Apr', value: 4000 }, { month: 'May', value: 3700 }, { month: 'Jun', value: 3500 }, { month: 'Jul', value: 4000 }, { month: 'Aug', value: 4250 }, { month: 'Sep', value: 4750 }, { month: 'Oct', value: 5250 }, { month: 'Nov', value: 5500 }, { month: 'Dec', value: 5900 }];
+
+    // Размеры холста 300 х 150
+    var axisXStep = (300 / 11).toFixed(2);
+    console.log(axisXStep);
+    var ctx = object.get(0).getContext("2d");
+
+    ctx.lineWidth = 2; // толщина линии
+    ctx.moveTo(0, chartValue(values[0].value, 150, 2000, 6000)); //передвигаем перо (начальная точка)
+
+    for (var i = 1; i <= 12; i++) {
+        ctx.lineTo(axisXStep * (i - 1), chartValue(values[i - 1].value, 150, 2000, 6000));
+        ctx.strokeStyle = '#1d95d1';
+        ctx.stroke();
+    }
+
+    object.on('click', function (event) {
+        var x = event.offsetX;
+        var y = event.offsetY;
+        var axixXWidth = object.width();
+        var pointSector = (x / (object.width() / 11)).toFixed(0);
+        var pointPositionLeft = pointSector * (object.width() / 11) + 10;
+        var messagePositionLeft = pointSector * (object.width() / 11) + 10;
+        var pointPositionTop = chartValue(values[pointSector].value, object.height(), 2000, 6000);
+        console.log(x, y, axixXWidth);
+
+        var messagePositionTop = pointPositionTop - 100;
+        console.log(messagePositionLeft);
+
+        var messageValue1 = values[pointSector].value;
+
+        if (messagePositionLeft > object.width() - 150) {
+            messagePositionLeft = object.width() - 150;
+        }
+
+        $('.canvas-point').css({ 'top': pointPositionTop, 'left': pointPositionLeft });
+        $('.canvas-message').css({ 'top': messagePositionTop, 'left': messagePositionLeft });
+        $('.dashboard-financials__chart-value-1').text(messageValue1);
+        $('.canvas-popup').toggleClass('checked');
+    });
 }
 
 /***/ })
