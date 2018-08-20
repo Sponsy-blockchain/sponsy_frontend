@@ -1242,22 +1242,8 @@ $('#details-select').select2({
 "use strict";
 
 
-if ($('.chart').length > 0) {
-    var chartValue = function chartValue(value, //Значение за месяц 
-    canvasAxisYSize, // Ширина по оси Y
-    axisYStartValue, // Начальное значение по оси Y
-    axisYEndValue // Конечное значение по оси Y
-    ) {
-        return canvasAxisYSize - (value - axisYStartValue) * canvasAxisYSize / (axisYEndValue - axisYStartValue);
-    };
-
-    var object = $('#financial-chart-1');
-    // Входные данные
-    var values = [{ month: 'Jan', value: 3000 }, { month: 'Feb', value: 3400 }, { month: 'Mar', value: 4500 }, { month: 'Apr', value: 4000 }, { month: 'May', value: 3700 }, { month: 'Jun', value: 3500 }, { month: 'Jul', value: 4000 }, { month: 'Aug', value: 4250 }, { month: 'Sep', value: 4750 }, { month: 'Oct', value: 5250 }, { month: 'Nov', value: 5500 }, { month: 'Dec', value: 5900 }];
-
-    // Размеры холста 300 х 150
-    var axisXStep = (300 / 11).toFixed(2);
-    console.log(axisXStep);
+function chartInit(object, values, chartColor) {
+    var axisXStep = (300 / 11).toFixed(2); // Размеры холста 300 х 150
     var ctx = object.get(0).getContext("2d");
 
     ctx.lineWidth = 2; // толщина линии
@@ -1265,34 +1251,76 @@ if ($('.chart').length > 0) {
 
     for (var i = 1; i <= 12; i++) {
         ctx.lineTo(axisXStep * (i - 1), chartValue(values[i - 1].value, 150, 2000, 6000));
-        ctx.strokeStyle = '#1d95d1';
+        ctx.strokeStyle = chartColor;
         ctx.stroke();
     }
 
-    object.on('click', function (event) {
+    function chartValue(value, //Значение за месяц 
+    canvasAxisYSize, // Ширина по оси Y
+    axisYStartValue, // Начальное значение по оси Y
+    axisYEndValue // Конечное значение по оси Y
+    ) {
+        return canvasAxisYSize - (value - axisYStartValue) * canvasAxisYSize / (axisYEndValue - axisYStartValue);
+    }
+
+    function popUpValue1(value) {
+        return values[value].value;
+    }
+
+    function popUpValue2(value) {
+        if (value < 1) {
+            return 0 + '%';
+        }
+        return (100 * (popUpValue1(value) - popUpValue1(value - 1)) / popUpValue1(value - 1)).toFixed(2) + '%';
+    }
+
+    function movementMessage() {
         var x = event.offsetX;
-        var y = event.offsetY;
-        var axixXWidth = object.width();
         var pointSector = (x / (object.width() / 11)).toFixed(0);
-        var pointPositionLeft = pointSector * (object.width() / 11) + 10;
+
+        if (x < 0) {
+            pointSector = 0;
+        }
+
+        var pointPositionLeft = pointSector * (object.width() / 11) + 5;
         var messagePositionLeft = pointSector * (object.width() / 11) + 10;
-        var pointPositionTop = chartValue(values[pointSector].value, object.height(), 2000, 6000);
-        console.log(x, y, axixXWidth);
-
+        var pointPositionTop = chartValue(values[pointSector].value, object.height(), 2000, 6000) + 5;
         var messagePositionTop = pointPositionTop - 100;
-        console.log(messagePositionLeft);
-
-        var messageValue1 = values[pointSector].value;
+        var messageValue1 = popUpValue1(pointSector);
+        var messageValue2 = popUpValue2(pointSector);
 
         if (messagePositionLeft > object.width() - 150) {
             messagePositionLeft = object.width() - 150;
         }
 
-        $('.canvas-point').css({ 'top': pointPositionTop, 'left': pointPositionLeft });
-        $('.canvas-message').css({ 'top': messagePositionTop, 'left': messagePositionLeft });
-        $('.dashboard-financials__chart-value-1').text(messageValue1);
-        $('.canvas-popup').toggleClass('checked');
+        if (messagePositionTop < -60) {
+            messagePositionTop = -60;
+        }
+
+        object.parent().find('.canvas-point').css({ 'top': pointPositionTop, 'left': pointPositionLeft });
+        object.parent().find('.canvas-message').css({ 'top': messagePositionTop, 'left': messagePositionLeft });
+        object.parent().find('.canvas-message-1').text(messageValue1);
+        object.parent().find('.canvas-message-2').text(messageValue2);
+    }
+
+    object.on('mouseenter', function () {
+        movementMessage();
+        object.parent().find('.canvas-popup').addClass('checked');
     });
+
+    object.on('mouseleave', function () {
+        object.parent().find('.canvas-popup').removeClass('checked');
+    });
+
+    object.on('mousemove', function () {
+        movementMessage();
+    });
+}
+
+if ($('.chart').length > 0) {
+    chartInit($('#financial-chart-1'), [{ month: 'Jan', value: 3000 }, { month: 'Feb', value: 3400 }, { month: 'Mar', value: 4500 }, { month: 'Apr', value: 4000 }, { month: 'May', value: 3700 }, { month: 'Jun', value: 3500 }, { month: 'Jul', value: 4000 }, { month: 'Aug', value: 4250 }, { month: 'Sep', value: 4750 }, { month: 'Oct', value: 5250 }, { month: 'Nov', value: 5500 }, { month: 'Dec', value: 5900 }], '#1d95d1');
+
+    chartInit($('#financial-chart-2'), [{ month: 'Jan', value: 3000 }, { month: 'Feb', value: 4000 }, { month: 'Mar', value: 4500 }, { month: 'Apr', value: 3700 }, { month: 'May', value: 3200 }, { month: 'Jun', value: 3500 }, { month: 'Jul', value: 4000 }, { month: 'Aug', value: 4250 }, { month: 'Sep', value: 4750 }, { month: 'Oct', value: 5250 }, { month: 'Nov', value: 5500 }, { month: 'Dec', value: 5700 }], '#1d95d1');
 }
 
 /***/ })

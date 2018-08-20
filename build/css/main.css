@@ -1731,7 +1731,7 @@ ul {
     top: 3.125rem;
     left: 288px;
     display: none;
-    width: 9.375rem;
+    min-width: 9.375rem;
     height: 5rem;
     padding: 0.9375rem;
     -webkit-box-shadow: 0.25rem 0.25rem 1.25rem rgba(29, 149, 209, 0.1);
@@ -2337,6 +2337,7 @@ ul {
     position: absolute;
     top: 143px;
     left: 26.25rem;
+    display: none;
     width: 0.5rem;
     height: 0.5rem;
     -webkit-border-radius: 50%;
@@ -2345,13 +2346,16 @@ ul {
     background: #1d95d1; }
     .return-on__chart-point.hidden {
       display: none; }
+    .return-on__chart-point.checked {
+      display: block; }
   .return-on__chart-description {
     position: absolute;
     top: 3.125rem;
     left: 288px;
-    width: 9.375rem;
+    display: none;
+    min-width: 9.375rem;
     height: 5rem;
-    padding: 0.9375rem 0.9375rem 0.9375rem  1.25rem;
+    padding: 0.9375rem;
     -webkit-box-shadow: 0.25rem 0.25rem 1.25rem rgba(29, 149, 209, 0.1);
        -moz-box-shadow: 0.25rem 0.25rem 1.25rem rgba(29, 149, 209, 0.1);
             box-shadow: 0.25rem 0.25rem 1.25rem rgba(29, 149, 209, 0.1);
@@ -2361,6 +2365,8 @@ ul {
     background-color: #fff; }
     .return-on__chart-description.hidden {
       display: none; }
+    .return-on__chart-description.checked {
+      display: block; }
   .return-on__chart-value-1 {
     margin-right: 0.625rem;
     color: #1d95d1;
