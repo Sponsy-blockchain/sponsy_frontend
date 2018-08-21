@@ -1244,13 +1244,40 @@ $('#details-select').select2({
 
 function chartInit(object, values, chartColor) {
     var axisXStep = (300 / 11).toFixed(2); // Размеры холста 300 х 150
-    var ctx = object.get(0).getContext("2d");
+    var obj1 = object.get(0);
+    var ctx = obj1.getContext("2d");
+    var valueMin = values[0].value;
+    var valueMid = void 0;
+    var valueMax = values[0].value;
+
+    for (var i = 1; i < values.length; i++) {
+        if (values[i].value > valueMax) {
+            valueMax = values[i].value;
+        }
+
+        if (values[i].value < valueMin) {
+            valueMin = values[i].value;
+        }
+    }
+
+    // Отступы по графику
+    // valueMax = (valueMax / 500).toFixed(0) * 500 + 500;
+    // valueMin = (valueMin / 500).toFixed(0) * 500 - 500;
+    valueMid = (valueMax - valueMin) / 2 + valueMin;
+
+    object.parent().parent().find('.chart__value.max').text(valueMax);
+    object.parent().parent().find('.chart__value.mid').text(valueMid);
+    object.parent().parent().find('.chart__value.min').text(valueMin);
+
+    for (var _i = 0; _i < values.length; _i++) {
+        object.parent().parent().find('.chart__axis_x .chart__value').eq(_i).text(values[_i].month);
+    }
 
     ctx.lineWidth = 2; // толщина линии
-    ctx.moveTo(0, chartValue(values[0].value, 150, 2000, 6000)); //передвигаем перо (начальная точка)
+    ctx.moveTo(0, chartValue(values[0].value, 150, valueMin, valueMax)); //передвигаем перо (начальная точка)
 
-    for (var i = 1; i <= 12; i++) {
-        ctx.lineTo(axisXStep * (i - 1), chartValue(values[i - 1].value, 150, 2000, 6000));
+    for (var _i2 = 1; _i2 <= 12; _i2++) {
+        ctx.lineTo(axisXStep * (_i2 - 1), chartValue(values[_i2 - 1].value, 150, valueMin, valueMax));
         ctx.strokeStyle = chartColor;
         ctx.stroke();
     }
@@ -1269,9 +1296,10 @@ function chartInit(object, values, chartColor) {
 
     function popUpValue2(value) {
         if (value < 1) {
-            return 0 + '%';
+            return 0;
         }
-        return (100 * (popUpValue1(value) - popUpValue1(value - 1)) / popUpValue1(value - 1)).toFixed(2) + '%';
+
+        return (100 * (popUpValue1(value) - popUpValue1(value - 1)) / popUpValue1(value - 1)).toFixed(2);
     }
 
     function movementMessage() {
@@ -1282,17 +1310,19 @@ function chartInit(object, values, chartColor) {
             pointSector = 0;
         }
 
-        var pointPositionLeft = pointSector * (object.width() / 11) + 5;
+        var pointPositionLeft = pointSector * (object.width() / 11) + 4;
         var messagePositionLeft = pointSector * (object.width() / 11) + 10;
-        var pointPositionTop = chartValue(values[pointSector].value, object.height(), 2000, 6000) + 5;
+        var pointPositionTop = chartValue(values[pointSector].value, object.height(), valueMin, valueMax) + 4;
         var messagePositionTop = pointPositionTop - 100;
         var messageValue1 = popUpValue1(pointSector);
         var messageValue2 = popUpValue2(pointSector);
 
+        // Ограничения по вылету
+        // - по высоте
         if (messagePositionLeft > object.width() - 150) {
             messagePositionLeft = object.width() - 150;
         }
-
+        // - по ширине
         if (messagePositionTop < -60) {
             messagePositionTop = -60;
         }
@@ -1300,7 +1330,10 @@ function chartInit(object, values, chartColor) {
         object.parent().find('.canvas-point').css({ 'top': pointPositionTop, 'left': pointPositionLeft });
         object.parent().find('.canvas-message').css({ 'top': messagePositionTop, 'left': messagePositionLeft });
         object.parent().find('.canvas-message-1').text(messageValue1);
-        object.parent().find('.canvas-message-2').text(messageValue2);
+        object.parent().find('.canvas-message-2').text(messageValue2 + ' %').removeClass('down');
+        if (messageValue2 < 0) {
+            object.parent().find('.canvas-message-2').addClass('down');
+        }
     }
 
     object.on('mouseenter', function () {

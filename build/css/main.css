@@ -1750,8 +1750,10 @@ ul {
     color: #1d95d1;
     font-size: 1.5rem; }
   .dashboard-financials__chart-value-2 {
-    color: #ff4f4f;
+    color: #15bc30;
     font-size: 0.75rem; }
+    .dashboard-financials__chart-value-2.down {
+      color: #ff4f4f; }
   .dashboard-financials__chart-value-3 {
     color: #1d95d1;
     font-size: 0.875rem;
@@ -2372,8 +2374,10 @@ ul {
     color: #1d95d1;
     font-size: 1.5rem; }
   .return-on__chart-value-2 {
-    color: #ff4f4f;
+    color: #15bc30;
     font-size: 0.75rem; }
+    .return-on__chart-value-2.down {
+      color: #ff4f4f; }
   .return-on__chart-value-3 {
     color: #1d95d1;
     font-size: 0.875rem;
