@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1" id="viewport">
-		<link rel="stylesheet" href="css/main.css?v=1535728085061">
+		<link rel="stylesheet" href="css/main.css?v=1535728086179">
 	</head>
 	<body>
 		<header class="header">
@@ -36,35 +36,30 @@
 			</nav>
 		</aside>
 		<main class="dashboard">
-			<div class="dashboard__container">
-				<div class="dashboard__row center">
-					<h2 class="dashboard__section-header">List new sponsorship asset</h2>
-					<div class="dashboard__item list-new-asset">
-						<form id="new-asset-form">
-							<div class="list-new-asset__container">
-								<div class="list-new-asset__item list-new-asset__item_1">
-									<label class="list-new-asset__label label-unify" for="input-scene">What is your sponsorship asset?</label>
-									<input class="list-new-asset__input" id="input-scene" type="text" placeholder="Scene curtains branding">
-									<p class="list-new-asset__error" id="input-scene-error">Please enter correct scene</p>
-									<label class="list-new-asset__label label-unify" for="input-spons">Enter the minimum price for which you’d like to offer this asset</label>
-									<input class="list-new-asset__input" id="input-spons" type="number" placeholder="SPONS 15,000">
-									<p class="list-new-asset__error" id="input-spons-error">Please enter correct spons</p>
-								</div>
-								<div class="list-new-asset__item list-new-asset__item_2">
-									<label class="list-new-asset__label-file label-file-unify"><img class="list-new-asset__image" src="images/photo-empty.png" alt="Assets photo">
-										<input class="list-new-asset__input-file input-file-unify" type="file">
-									</label>
-									<div class="list-new-asset__image-placeholder">Upload asset’s photo</div>
-									<p class="list-new-asset__error" id="listing-logo-error">Please choose your logo</p>
-								</div>
-							</div>
-							<div class="list-new-asset__direct">
-								<div class="list-new-asset__button list-new-asset__button_cancel">Cancel</div>
-								<input class="list-new-asset__button list-new-asset__button_confirm" type="submit" value="Confirm">
-							</div>
-						</form>
+			<div class="dashboard__container listing-sponsor">
+				<form>
+					<div class="dashboard__row">
+						<h2 class="dashboard__section-header">Propose partnership</h2>
+						<div class="dashboard__item">
+							<label class="label-unify">Enter the partnership title</label>
+							<input class="input-unify" type="text" placeholder="Title" value=""/>
+							<p class="error-unify" id="partnership-title-error">Please enter correct title</p>
+							<label class="label-unify">Enter the partnership goal</label>
+							<input class="input-unify" type="text" placeholder="Goal" value=""/>
+							<p class="error-unify" id="partnership-goal-error">Please enter correct goal</p>
+						</div>
+						<div class="dashboard__item sponsor-detail">
+							<label class="label-unify" for="propose-textarea">Description shall tell more about your propose</label>
+							<textarea class="textarea-unify" id="propose-textarea" name="propose-textarea" cols="10" rows="5" placeholder="Adidas is a multinational corporation, founded and headquartered in Herzogenaurach, Germany, that designs and manufactures shoes, clothing and accessories. It is the largest sportswear manufacturer in Europe, and the second largest in the world, after Nike. It is the holding company for the Adidas Group."></textarea>
+							<p class="error-unify">Please enter some information</p>
+						</div>
 					</div>
-				</div>
+					<div class="dashboard__row">
+						<div class="list-new-asset__direct"><a class="list-new-asset__button list-new-asset__button_cancel animation-unify" href="/">Cancel</a>
+							<input class="list-new-asset__button list-new-asset__button_confirm animation-unify" type="submit" value="Confirm"/>
+						</div>
+					</div>
+				</form>
 			</div>
 		</main>
 		<footer class="footer"><span class="footer__text">Sponsy © 2018 All rights reserved</span></footer>
@@ -86,7 +81,7 @@
 				</div>
 			</div>
 		</div>
-		<script src="js/vendor.js?v=1535728085061"></script>
-		<script src="js/main.js?v=1535728085061"></script>
+		<script src="js/vendor.js?v=1535728086179"></script>
+		<script src="js/main.js?v=1535728086179"></script>
 	</body>
 </html>

@@ -18,6 +18,10 @@ __webpack_require__(402);
 
 __webpack_require__(403);
 
+__webpack_require__(404);
+
+__webpack_require__(405);
+
 /***/ }),
 
 /***/ 163:
@@ -1355,6 +1359,94 @@ if ($('.chart').length > 0) {
 
     chartInit($('#financial-chart-2'), [{ month: 'Jan', value: 3000 }, { month: 'Feb', value: 4000 }, { month: 'Mar', value: 4500 }, { month: 'Apr', value: 3700 }, { month: 'May', value: 3200 }, { month: 'Jun', value: 3500 }, { month: 'Jul', value: 4000 }, { month: 'Aug', value: 4250 }, { month: 'Sep', value: 4750 }, { month: 'Oct', value: 5250 }, { month: 'Nov', value: 5500 }, { month: 'Dec', value: 5700 }], '#1d95d1');
 }
+
+/***/ }),
+
+/***/ 404:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var $sendButton = $('#chat-send');
+
+// $sendButton.keydown(function (event) {
+//     // let $this = $(event.currentTarget);
+//     if (event.which == 13) {//13 - это код клавиши "Enter"
+//         this.click();
+//     }
+// });
+
+$sendButton.on('click', function (event) {
+    var $this = $(event.currentTarget);
+
+    if ($this.prev('#chat-message').val() === '') {
+        return false;
+    }
+
+    sendAjaxForm('#chat-message-container', '#chat-form', 'php/ajax-form.php');
+    return false;
+});
+
+function sendAjaxForm(container, message, path) {
+    $.ajax({
+        url: path,
+        type: 'POST',
+        dataType: 'html',
+        data: $(message).serialize(),
+        success: function success(response) {
+            var result = $.parseJSON(response);
+            var newDate = new Date();
+
+            $(container).prepend('' + '<div class="chat__message chat__message_archive out">' + '<div class="chat__logo"><img class="chat__image" src="images/ava.png" alt="Image"></div>' + '<div class="chat__text-container">' + '<div class="chat__text">' + result.message + '</div>' + '<div class="chat__text-description">' + date(newDate) + '</div>' + '</div>' + '</div>');
+            $(message).trigger('reset');
+        },
+        error: function error(response) {
+            console.log('Sorry, chat temporary unavalible');
+            // Сюда нужно прикрутить действие которое будет происходить если что то пойдет не так...
+        }
+    });
+}
+
+function date(value) {
+    var year = tenZero(value.getFullYear());
+    var month = tenZero(value.getMonth());
+    var day = tenZero(value.getDate());
+    var hours = tenZero(value.getHours());
+    var minutes = tenZero(value.getMinutes());
+
+    return day + '.' + month + '.' + year + ', ' + hours + ':' + minutes;
+}
+
+function tenZero(value) {
+    if (value < 10) {
+        return '0' + value;
+    }
+
+    return value;
+}
+
+/***/ }),
+
+/***/ 405:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+$('.input-file-unify').on('change', function () {
+  // let $this = $(event.currentTarget);
+  if (this.files[0]) {
+    var fr = new FileReader();
+
+    fr.addEventListener('load', function () {
+      // $('.list-new-asset__image').attr('src' , '' + fr.result + '');
+      $('.label-file-unify').css({ 'background-image': 'url(' + fr.result + ')' });
+    }, false);
+
+    fr.readAsDataURL(this.files[0]);
+  }
+});
 
 /***/ })
 

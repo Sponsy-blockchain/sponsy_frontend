@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1" id="viewport">
-		<link rel="stylesheet" href="css/main.css?v=1534847132752">
+		<link rel="stylesheet" href="css/main.css?v=1535728082696">
 	</head>
 	<body>
 		<header class="header">
@@ -44,8 +44,7 @@
 							<div class="arrangement__item arrangement__logo"><img class="arrangement__image" src="images/arragement-logo2.png" alt="Annual partnership with Nice Jazz Festival - 2018"/></div>
 							<div class="arrangement__item arrangement__about">
 								<div class="arrangement__about-item">
-									<p class="arrangement__description">Partner</p>
-									<p class="arrangement__title">Van Gogh museum </p>
+									<p class="arrangement__description">Partner</p><a class="arrangement__title" href="/">Van Gogh museum </a>
 								</div>
 								<div class="arrangement__about-item">
 									<p class="arrangement__description">Status</p>
@@ -73,11 +72,13 @@
 					</div>
 					<div class="dashboard__item chat">
 						<div class="chat__header">Chat with partner</div>
-						<div class="chat__message chat__message_send">
-							<div class="chat__logo"><img class="chat__image" src="images/image.png" alt="Adidas"/></div>
-							<input class="chat__input input-unify" type="text" placeholder="Enter your message" value=""/>
-							<input class="chat__submit animation-unify" type="submit" value="Send"/>
-						</div>
+						<form method="post" id="chat-form">
+							<div class="chat__message chat__message_send">
+								<div class="chat__logo"><img class="chat__image" src="images/image.png" alt="Adidas"/></div>
+								<input class="chat__input input-unify" id="chat-message" name="message" type="text" placeholder="Enter your message" value=""/>
+								<input class="chat__submit animation-unify" id="chat-send" type="button" value="Send"/>
+							</div>
+						</form>
 						<div class="chat__message chat__message_start"><img class="chat__image-start" src="images/chat1.png" alt="Chart"/>
 							<p class="chat__text-start">Your chat room is still empty. Write to <a href="/">Van Gogh museum</a> first</p>
 						</div>
@@ -104,7 +105,7 @@
 				</div>
 			</div>
 		</div>
-		<script src="js/vendor.js?v=1534847132753"></script>
-		<script src="js/main.js?v=1534847132753"></script>
+		<script src="js/vendor.js?v=1535728082697"></script>
+		<script src="js/main.js?v=1535728082697"></script>
 	</body>
 </html>

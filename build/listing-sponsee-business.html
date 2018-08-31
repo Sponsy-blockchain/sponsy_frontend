@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1" id="viewport">
-		<link rel="stylesheet" href="css/main.css?v=1534847137726">
+		<link rel="stylesheet" href="css/main.css?v=1535728085263">
 	</head>
 	<body>
 		<header class="header">
@@ -29,19 +29,22 @@
 						<div class="dashboard__item">
 							<label class="label-unify">Enter the title to be seen as sponsee</label>
 							<input class="input-unify" type="text" placeholder="Nice Jazz Festival" value=""/>
+							<p class="error-unify" id="sponsee-title-error">Please enter correct title</p>
 							<label class="label-unify">Enter the brief company’s quote</label>
 							<input class="input-unify" type="text" placeholder="The first jazz festival of international significance" value=""/>
+							<p class="error-unify" id="sponsee-brief-error">Please enter correct brief info</p>
 						</div>
 						<div class="dashboard__item sponsor-buisness">
 							<div class="sponsor-buisness__logo">
-								<p class="sponsors-buisness__hint label-unify">Chose a sponsee logo</p>
-								<label class="label-file-unify"><img class="sponsor-buisness__image" src="images/photo-empty.png" alt="Logo"/>
+								<label class="sponsor-buisness__label label-file-unify"><img class="sponsor-buisness__image" src="images/photo-empty.png" alt="Logo"/>
 									<input class="input-file-unify" type="file"/>
 								</label>
+								<p class="sponsors-buisness__hint label-unify">Chose a sponsee logo</p>
 							</div>
 							<div class="sponsor-buisness__content">
 								<h3 class="sponsor-buisness__title">Nice Jazz Festival</h3>
 								<p class="sponsor-buisness__description">The first jazz festival of international significance</p>
+								<p class="error-unify" id="sponsee-logo-error">Please choose your logo</p>
 							</div>
 						</div>
 					</div>
@@ -50,14 +53,17 @@
 						<div class="dashboard__item sponsor-detail">
 							<label class="label-unify" for="details-1-textarea">Description shall tell more about your company, its history and development.</label>
 							<textarea class="textarea-unify" id="details-1-textarea" name="details-1" cols="10" rows="5" placeholder="The Nice Jazz Festival, held annually since 1948 in Nice, on the French Riviera, is “the first jazz festival of international significance.” At the inaugural festival, Louis Armstrong and his All Stars were the headliners. Frommer’s calls it “the biggest, flashiest, and most prestigious jazz festival in Europe.”"></textarea>
+							<p class="error-unify">Please enter some information</p>
 						</div>
 						<div class="dashboard__item sponsor-detail">
 							<label class="label-unify" for="details-2-textarea">Tell us more about how sponsors take advantage of your audience</label>
 							<textarea class="textarea-unify" id="details-2-textarea" name="details-2" cols="10" rows="5" placeholder="Sponsors are free to put their unique branding and advertising on custom stand or counter throughout the event territory. The size of branding can vary and will influence the price of it. Premium sponsors can enjoy event organizers expressly mentioning their brand during one of the speeches. Please refer to…"></textarea>
+							<p class="error-unify">Please enter some information</p>
 						</div>
 						<div class="dashboard__item sponsor-detail">
 							<label class="label-unify" for="details-3-textarea">How do you handle sponsors’ brands?</label>
 							<textarea class="textarea-unify" id="details-3-textarea" name="details-3" cols="10" rows="5" placeholder="">We’ve created a so-called Partners Village. We will be happy to see your brand or company joining the Village. This is a great opportunity for you to position your company as a key player in economic and social life, promote your dynamism, and strengthen business contacts.</textarea>
+							<p class="error-unify">Please enter some information</p>
 						</div>
 						<div class="dashboard__item sponsor-select">
 							<p class="label-unify">Select your business indusrty from the list below</p>
@@ -69,6 +75,7 @@
 									<option value="Clothing">Clothing</option>
 								</select>
 							</div>
+							<p class="error-unify" id="sponsee-select-error">Please choose business industry</p>
 						</div>
 					</div>
 					<div class="dashboard__row dashboard__row_listing">
@@ -98,7 +105,7 @@
 				</div>
 			</div>
 		</div>
-		<script src="js/vendor.js?v=1534847137727"></script>
-		<script src="js/main.js?v=1534847137727"></script>
+		<script src="js/vendor.js?v=1535728085264"></script>
+		<script src="js/main.js?v=1535728085264"></script>
 	</body>
 </html>
